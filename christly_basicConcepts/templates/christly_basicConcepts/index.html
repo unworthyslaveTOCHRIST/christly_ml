@@ -1,0 +1,42 @@
+{% extends "christly_basicConcepts/layout.html" %}
+
+{% block body %}
+    <h1>Christly Iris Prediction</h1>
+
+    <form action = "{% url 'index' %}" method = "POST">
+
+        {% csrf_token %}
+        <div>
+            <label for="gtljc_username">Sepal Length</label>
+            <input type = "text" name = "gtljc_sepal_length" id = "gtljc_sepal_length">
+        </div>
+        
+        <div>
+            <label for="gtljc_sepal_width">Sepal Width</label>
+            <input type = "text" name = "gtljc_sepal_width" id = "gtljc_sepal_width">
+        </div>
+        
+        <div>
+            <label for="gtljc_petal_length">Petal Length</label>
+            <input type = "text" name = "gtljc_petal_length" id = "gtljc_petal_length">
+        </div>
+        
+        <div>
+            <label for="gtljc_petal_width">Petal Width</label>
+            <input type = "text" name = "gtljc_petal_width" id = "gtljc_petal_width">
+        </div>
+        
+        
+        <input type = "submit"/>
+
+        <h3>Prediction: </h3>
+        {% if y_pred %}
+            <h4>{{y_pred}}</h4>
+                 
+        {% else %}      
+            <h4> No Prediction </h4>
+        
+        {% endif %}
+    
+    </form>
+{% endblock %}
