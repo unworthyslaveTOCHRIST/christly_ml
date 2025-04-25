@@ -1,1 +1,1 @@
-python3.8 manage.py collectstatic --noinput
+python manage.py collectstatic --noinput
